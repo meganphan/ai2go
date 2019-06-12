@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+		<meta charset="utf-8">
+		<link rel="icon" type="image/png" sizes="16x16" href="/static/img/icon.png">
+		<title>Contact</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+		<div class="w3-center">
+		<div class="w3-row w3-padding-16">
+				<div class="w3-padding-large" style="text-align: center;background-color: transparent; color: #4d1979; margin: 4%;">
+						<h1 class="w3-padding-16" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Contact Us</h1>
+						<form id="contact-form" method="POST" action="/form">
+						<input class="form-control" type="text"name="name" placeholder="Your name" required><br>
+						<input class="form-control" type="email" name="email" placeholder="Your email" required><br>
+						<textarea class="form-control" name="message" placeholder="Enter your message" required></textarea><br>
+						<div class="g-recaptcha" data-sitekey="6Lc7cVMUAAAAAM1yxf64wrmO8gvi8A1oQ_ead1ys" class="form-control" style="width:100%;"></div><br>
+						<input id="submit" type="submit" value="submit"><br>
+						</form>
+				</div>
+		</div>
+		</div>
+    {% endblock %}
+  </body>
+</html>

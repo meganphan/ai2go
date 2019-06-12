@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+* {
+  outline-width: 0;
+  font-family: 'Roboto';
+}
+
+#cubeContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cubeWrapper {
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+}
+
+#cubes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.p1 {
+  background: url("/static/img/quang.jpeg") center;
+  background-size: cover;
+}
+
+.p2 {
+  background: url("/static/img/kien.jpg") center;
+  background-size: cover;
+}
+
+.p3 {
+  background: url("/static/img/kimon.jpg") center;
+  background-size: cover;
+}
+
+.p4 {
+  background: url("/static/img/meganp.png") center;
+}
+
+.p5 {
+  background: url("/static/img/khiem.jpg") center;
+}
+
+.p6 {
+  background: url("/static/img/drma.jpg") center;
+}
+
+.p7 {
+  background: url("/static/img/drdou.jpg") center;
+}
+
+.cube {
+  height: 320px;
+  width: 220px;
+  background-size: cover;
+  border: 5px solid #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3), 0 2px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.cube .title {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  text-shadow: 0 2px 5px #000;
+}
+.cube .title h1 {
+  font-size: 16px;
+  color: #fff;
+  margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.cube .title p {
+  color: #fff;
+  margin: 0;
+  font-size: 12px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.cube .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.cube:hover .content {
+  opacity: 1;
+}
+
+.cube:hover .content h1 {
+  top: 0;
+}
+.cube:hover .content p {
+  top: 10px;
+  color: white;
+  padding: 10px;
+}
+.cube:hover .innerBorder {
+  width: 90%;
+  height: 90%;
+  opacity: 1;
+}
+.cube:hover .darken {
+  opacity: 1;
+}
+
+.darken {
+  background: rgba(38, 50, 56, 0.85);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.innerBorder {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 1px solid #fff;
+  opacity: 0;
+  transition: 0.5s ease;
+}

@@ -1,0 +1,45 @@
+body,h1{font-family: "Poppins", sans-serif}
+body, html {
+  height: 100%;
+  color: #000;
+}
+footer {
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    color: #4d1979;
+}
+.parallax {
+  /* The image used */
+  background-image: url("/static/img/team.png");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.about p ol{
+  margin-left: 10%; 
+  margin-right: 10%; 
+  font-size: 20px;
+}
+
+.about h2{
+  color: #4d1979;
+  text-align: center; 
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px){
+  .parallax{
+    display: none !important;
+  }
+  .about p{
+    font-size: 15px;
+  }
+}

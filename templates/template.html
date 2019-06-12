@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI2Go</title>
+   <!-- CSS -->
+   <link rel="stylesheet" href="/static/css/style.css">
+   <link rel="stylesheet" href="/static/css/logo.css">
+   <link rel="stylesheet" href="/static/css/contact.css">
+   <link rel="stylesheet" href="/static/css/team.css">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+   <script src="/static/js/contact.js"></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+ <body>
+    <div class="w3-top">
+        <div class="w3-bar" id="myNavbar" style="background-color: #4d1979;color: white">
+          <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+            <i class="fa fa-bars"></i>
+          </a>
+          <a href="/" class="w3-bar-item w3-large w3-button" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">AI2Go</a>
+          <a href="/about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-code"></i> ABOUT</a>
+          <a href="/authors" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-users"></i> TEAM</a>
+          <a href="/contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+        </div>
+      
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium" style="background-color: #4d1979;color: white;">
+          <a href="/about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+          <a href="/authors" class="w3-bar-item w3-button" onclick="toggleFunction()">TEAM</a>
+          <a href="/contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+        </div>
+      </div>
+    {% block content %}
+    {% endblock %}
+    <!-- Footer -->
+    <footer class="w3-center w3-padding-10">
+        <p>Copyright &copy; AI2Go</p>
+    </footer>
+    <!-- Navbar JS -->
+    <script>
+        // Change style of navbar on scroll
+        window.onscroll = function() {myFunction()};
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top", "");
+            }
+        }
+        
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+        </script>
+ </body>
+</html>

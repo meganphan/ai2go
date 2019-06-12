@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/icon.png">
+    <title>AI2Go</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %} 
+    <div class="wrapper w3-padding-16">
+      <div class="outerbox">
+        <div class="box">
+          <div class="circle_white">
+            <div class="eye1"></div>
+            <div class="eye2"></div>
+            <div class="antenna1"></div>
+            <div class=scircle1></div>
+          </div>
+          <div class="circle_purple">
+            <div class="eye3"></div>
+            <div class="eye4"></div>
+            <div class="antenna2"></div>
+            <div class=scircle2></div>
+          </div>
+          <div class="name">
+            <a style="color: #4d1979">AI</a>
+            <a style="color: white">2</a>
+            <a style="color: #4d1979">Go</a>
+          </div>
+        </div>
+    </div>
+    </div>
+    <!-- Abstract -->
+    <div class="w3-row w3-padding-32" id="home">
+        <div class="w3-padding-large" style="text-align: justify; background-color: rgba(78, 25, 121, 0.877); color: #fff; margin: 5%; box-shadow: 0 8px 10px 0 rgb(153, 153, 153);">
+          <h1 class="w3-center">ABSTRACT</h1><br>
+          <p>In March 2016, AlphaGo, an AI program by Google DeepMind, defeated the Go world champion Lee Sedol 4-1 in a five-game match, shocking the world. After March 2017 when AlphaGo again defeated the world champion, AlphaGo was improved to a newer version called AlphaZero, a stronger AI program that self-trained, with no prior knowledge, after being told only the rules of the game. From then, the strength of AI kept climbing at an astonishing rate.</p>
+          <p>Gian-Carlo Pascutto, a computer programmer who works at the Mozilla Corporation, had a track record of building competitive game engines, first in chess, then in Go. After following the latest research, he combined the Monte Carlo Tree Search and a neural network into building the world’s most successful open-source Go engines – first Leela, then LeelaZero – which mirrored the advances made by DeepMind.</p>
+          <p>Based on the open-source engines, we plan to take an alternative path of utilizing LeelaZero: finding the optimal results/playouts on different board sizes from 3x3 up to 9x9. Because of symmetry, there is a difference between an even and odd n x n board size. Therefore, we treat them separately on the following outline of the project:</p>
+          <p>- Modify the code of LeelaZero to allow all odd dimensions and obtain the results of optimal play for odd n up to 9.</p>
+          <p>- Modify the code of LeelaZero to allow all even dimensions and obtain the results of optimal plays for even n up to 8.</p>
+        </div>
+    </div>
+    <!-- More Info -->
+      <div class="w3-container w3-content w3-padding-32" style="max-width:800px;">
+          <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+              <div class="w3-third w3-margin-bottom">
+                <img src="/static/img/sabaki.png" alt="..." style="width:100%; height: 260px">
+                <div class="w3-container w3-white">
+                  <p><b>The Go Game</b></p>
+                  <button class="w3-button w3-margin-bottom" style="background:#4d1979; color: white" onclick="document.getElementById('gogame').style.display='block'">More Info</button>
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="/static/img/mcts.png" alt="..." style="width:100%; height: 260px">
+                <div class="w3-container w3-white">
+                  <p><b>Monte Carlo Tree Search</b></p>
+                  <button class="w3-button w3-margin-bottom" style="background:#4d1979; color: white" onclick="document.getElementById('montecarlo').style.display='block'">More Info</button>
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="/static/img/snn.png" alt="..." style="width:100%; height: 260px">
+                <div class="w3-container w3-white">
+                  <p><b>Convolutional Neural Network</b></p>
+                  <button class="w3-button w3-margin-bottom" style="background:#4d1979; color: white" onclick="document.getElementById('neuralnetwork').style.display='block'">More Info</button>
+                </div>
+              </div>
+            </div>
+      </div>
+      <!-- Modal -->
+      <div id="gogame" class="w3-modal">
+          <div class="w3-modal-content w3-animate-top w3-card-4 w3-center">
+              <header class="w3-container w3-center w3-padding-16" style="background-color: #4d1979; color: #fff;"> 
+                  <span onclick="document.getElementById('gogame').style.display='none'" 
+                 class="w3-button w3-xlarge w3-display-topright">×</span>
+                  <h2 class="w3-wide">What is Go?</h2>
+                </header>
+                <div class="w3-container">
+                  <img src="/static/img/go.png" class="w3-image w3-padding-16" alt="Go Game" width="280" height="280">
+                  <div style="text-align: justify">
+                    <p>A Chinese board game for two players, in which the aim is to surround more territory than the opponent.</p>
+                    <h3>Strategy</h3>
+                    <p>• Strategy deals with global inﬂuence, interaction between distant stones, keeping the whole board in mind during local ﬁghts, and other issues that involve the overall game. It is therefore possible to allow a tactical loss when it confers a strategic advantage.</p>
+                    <h3>Area Scoring</h3>
+                    <p>• A player’s (ﬁnal) score is the number of stones that the player has on the board plus the number of empty intersections surrounded by that player’s stones.</p>
+                  </div>
+                </div>
+          </div>
+       </div>
+      
+       <div id="montecarlo" class="w3-modal">
+          <div class="w3-modal-content w3-animate-top w3-card-4 w3-center">
+              <header class="w3-container w3-center w3-padding-16" style="background-color: #4d1979; color: #fff;"> 
+                  <span onclick="document.getElementById('montecarlo').style.display='none'" 
+                 class="w3-button w3-xlarge w3-display-topright">×</span>
+                  <h2 class="w3-wide">The Monte Carlo Tree Search</h2>
+                </header>
+                <div class="w3-container">
+                    <img src="/static/img/mtcl.png" class="w3-image w3-padding-16" alt="MCTS" width="auto" height="280">
+                    <div style="text-align: justify">
+                    <p>A go-to algorithm for writing bots to play discrete, deterministic games with perfect information.</p>
+                    <h3>MCTS In AlphaZero</h3>
+                    <p>• Each edge (s, a) in the search tree stores a prior probability P(s, a), a visit count N(s, a), and an action value Q(s, a).</p>
+                    <p>• Each simulation starts from the root state and iteratively selects moves that maximize an Upper Conﬁdence Bound Q(s, a) + U(s, a).</p>
+                    <p>a. Traverses the tree until reaching a leaf node.</p>
+                    <p>b. The leaf node expands to simulate next possible moves (looking ahead).</p>
+                    <p>c. Action value Q is updated to track the mean of all evaluations V in the subtree below that action.</p>
+                    <p>d. Once the search is completed, the search probabilities π are returned.</p>
+                </div>
+                </div>
+          </div>
+       </div>
+
+       <div id="neuralnetwork" class="w3-modal">
+          <div class="w3-modal-content w3-animate-top w3-card-4 w3-center">
+            <header class="w3-container w3-center w3-padding-16" style="background-color: #4d1979; color: #fff;"> 
+              <span onclick="document.getElementById('neuralnetwork').style.display='none'" 
+             class="w3-button w3-xlarge w3-display-topright">×</span>
+              <h2 class="w3-wide">Convolutional Neural Network</h2>
+            </header>
+            <div class="w3-container">
+              <img src="/static/img/neuralnw.png" class="w3-image w3-padding-16" alt="Single Neural Network" width="auto" height="280">
+              <div style="text-align: justify">
+
+              <p>The neural network in AlphaZero takes the raw board representation s of the position and its history as an input, and outputs both move probabilities p and a value v, (p, v) = ƒ(s).</p>
+              <p>• The vector p represents the probability of selecting each move a (including pass), Pr(a |s).</p>
+              <p>• Value v is a scalar, estimating the probability of the current player winning from position s.</p>
+              <p>This network combines the roles of both policy network and value network into a single architecture.</p>
+            </div>
+            </div>
+          </div>
+       </div>
+   {% endblock %}
+  </body>
+</html>

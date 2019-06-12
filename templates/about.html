@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/icon.png">
+    <title>About AI2Go</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    
+    {% block content %}
+    <div class="about w3-container w3-padding-32">
+      <div class="parallax"></div>
+      <div>
+        <h2>Who We Are</h2>
+        <p>
+          Welcome to the website of AI2Go from Texas Christian University. We are a team of undergraduate students
+          doing research on the infamous AlphaZero by DeepMind. If you have never heard of DeepMind, it is an AI Company
+          owned by Google whose program called AlphaGo (the previous version of AlphaZero) defeated the Go world champion
+          Lee Sedol in March 2016. Hardly anyone of us knew how about Go and Reinforcement Learning before doing the project.
+          However, after a while into the research, we find that Go is a fascinating board game with simple rules yet complicated
+          gameplays, which raises us many theories behind it.
+        </p>
+      </div>
+      <div>
+        <h2>What We Do</h2>
+        <p>
+          To be able to begin the project, we need AlphaZero in hand to examine. Unfortunately, DeepMind never pusblished the source
+          code for the program. Yet, a genius Belgian programmer Gian-Carlo Pascutto wrote a replica of AlphaZero, called LeelaZero, and
+          made it an open-source project. So, we use LeelaZero to make our goal come true. Big thanks to Pascutto and his team! <br><br>
+          To gain a better understading on the algorithm called Monte Carlo Tree Search, the Residual Neural Networks implemented
+          in the program and the strategies of Go ultimately, we broke the game down to different board sizes (from 3x3 to 9x9) and observed the behaviors of the AI on
+          each board size as well as on different komis<sup>1</sup>. Hence, we will be able to find the optimal solutions (sequences of plays) and best komis on different
+          sizes.<br><br>
+          <em>Fun fact: It will take approximately 1700 years for a single computer with the best specs (as of today) to train a no-knowledge LeelaZero engine
+            to be as good as AlphaGo when it defeated Lee Sedol in 2016.
+          </em>
+        </p>
+      </div>
+  
+      <div>
+        <h2>Why We Do This</h2>
+        <p>
+          Go is a very complicated board game. It looks simple with only white and black stones, but when it comes to playing, a novice player would not
+          know the best position on the board to put the stones on. On a standard Go board, there are 361 (19<sup>2</sup>) corners/positions to play the stones.
+          There are three states that could happen to each position: black stone, white stone or no stone. Thus, we have 3<sup>361</sup> different combinations of
+          playouts at any time. And that is a really BIG number! Even reducing the board size to 9x9, there are still a BIG number of playout combinations (3<sup>81</sup>).
+          Plus, human beings cannot look ahead in the Go game like machine does. Therefore, we want to use LeelaZero, train it, then examine the patterns that the AI
+          produce on each board size and, maybe someday, write a procedure to teach amateur players to get better at playing Go quickly and efficiently.
+        </p>
+      </div>
+  
+      <div>
+        <h2>Our Goals</h2>
+          <ol>
+            <li>Obtain optimal solutions for board sizes from 3x3 to 9x9</li>
+            <li>Ingrate the optimal solutions found to teaching in Mathematics and in how to play Go</li>
+          </ol>
+      </div>
+      <div>
+        <h4 style="color: #4d1979">Footnotes</h4>
+        <em><sup>1</sup>Komi is an amount of points that gets added to the second-turn player due to the disadvantages of going second at the end of every Go game. The standard komi
+        for the standard board size 19x19 is between 5 and 7 depending on preferences.</em>
+      </div>
+    </div>
+{% endblock %}
+  </body>
+</html>
